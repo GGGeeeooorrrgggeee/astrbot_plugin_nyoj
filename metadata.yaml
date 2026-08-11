@@ -1,0 +1,9 @@
+name: astrbot_plugin_nyoj
+display_name: NYOJ
+author: George
+desc: NYOJ 排行榜同步、过题提醒与榜单推送插件
+version: 1.0.0
+astrbot_version: ">=4.9.2"
+support_platforms:
+  - aiocqhttp
+repo: "https://github.com/GGGeeeooorrrgggeee/astrbot_plugin_nyoj"

@@ -1,0 +1,226 @@
+{
+    "basic": {
+        "description": "基础配置",
+        "type": "object",
+        "items": {
+            "oj_name": {
+                "description": "OJ名称",
+                "type": "string",
+                "default": "NYOJ",
+                "hint": "用于消息提示、日志和个人主页图片中的 OJ 名称显示。"
+            }
+        }
+    },
+    "mysql": {
+        "description": "MySQL 数据库配置",
+        "type": "object",
+        "items": {
+            "mysql_host": {
+                "description": "MySQL 主机地址",
+                "type": "string",
+                "default": "",
+                "hint": "NYOJ 数据库地址，支持 IPv6。若容器处于同一 Docker 网络，可直接填写容器名或服务名作为域名进行访问。"
+            },
+            "mysql_port": {
+                "description": "MySQL 端口",
+                "type": "int",
+                "default": 3306
+            },
+            "mysql_user": {
+                "description": "MySQL 用户名",
+                "type": "string",
+                "default": ""
+            },
+            "mysql_password": {
+                "description": "MySQL 密码",
+                "type": "string",
+                "default": "",
+                "hint": "NYOJ MySQL 用户密码。"
+            },
+            "mysql_database": {
+                "description": "MySQL 数据库名",
+                "type": "string",
+                "default": ""
+            }
+        }
+    },
+    "nyoj_api": {
+        "description": "NYOJ 接口配置",
+        "type": "object",
+        "items": {
+            "nyoj_base_url": {
+                "description": "NYOJ 网站地址",
+                "type": "string",
+                "default": "https://xcpc.nyist.edu.cn",
+                "hint": "用于查询比赛榜单和题目题面，不要填写末尾斜杠。"
+            },
+            "nyoj_username": {
+                "description": "NYOJ 登录账号",
+                "type": "string",
+                "default": "",
+                "hint": "用于调用 NYOJ 比赛榜单和题目查询接口。"
+            },
+            "nyoj_password": {
+                "description": "NYOJ 登录密码",
+                "type": "string",
+                "default": "",
+                "hint": "用于调用 NYOJ 比赛榜单和题目查询接口。"
+            },
+            "nyoj_secret_key": {
+                "description": "NYOJ 接口 secret_key",
+                "type": "string",
+                "default": ""
+            },
+            "allow_private_contest_rank": {
+                "description": "允许查询非公开赛",
+                "type": "bool",
+                "default": false,
+                "hint": "关闭时 “比赛榜单” 和 “题目查询” 只允许查询公开赛；开启后不再拦截非公开赛。是否能成功查询仍取决于 NYOJ 账号是否有权限访问该比赛。"
+            }
+        }
+    },
+        "ranking": {
+        "description": "排行榜配置",
+        "type": "object",
+        "items": {
+            "ranking_title": {
+                "description": "榜单标题",
+                "type": "string",
+                "default": "2026 新生总排行",
+                "hint": "“NYOJ” 指令排行榜的标题"
+            },
+            "ranking_after_date": {
+                "description": "榜单起始注册日期",
+                "type": "string",
+                "default": "2026-06-01",
+                "hint": "“NYOJ” 指令仅统计该日期之后注册的账号，格式 YYYY-MM-DD。"
+            },
+            "ranking_limit": {
+                "description": "榜单基础人数",
+                "type": "int",
+                "default": 10,
+                "hint": "默认 10 人。达到该人数后，若末尾 AC 数相同会继续保留并列用户；总榜、排名升降榜、比赛榜单和每日榜单都会使用这个基础人数。"
+            },
+            "manual_ranking_limit_max": {
+                "description": "手动查询榜单最大人数",
+                "type": "int",
+                "default": 50,
+                "hint": "“nyoj 日期 人数” 和 “比赛榜单 比赛名 人数” 中的人数不能超过该值，防止普通用户一次查询过大榜单，导致系统崩溃。"
+            },
+            "ranking_username_blacklist": {
+                "description": "榜单用户黑名单",
+                "type": "list",
+                "default": [],
+                "hint": "填写用户名。所有榜单都会屏蔽这些用户。"
+            }
+        }
+    },
+    "broadcast": {
+        "description": "推送配置",
+        "type": "object",
+        "items": {
+            "broadcast_platform_id": {
+                "description": "推送平台ID",
+                "type": "string",
+                "default": "OJbot",
+                "hint": "AstrBot 平台实例 ID。默认 OJbot。如果你把平台实例名（机器人名称）改了，这里也要改。"
+            },
+            "broadcast_message_type": {
+                "description": "推送消息类型",
+                "type": "string",
+                "default": "GroupMessage",
+                "hint": "默认 GroupMessage，表示群聊消息。普通 QQ 群推送保持默认即可。"
+            },
+            "broadcast_targets": {
+                "description": "推送目标QQ群号列表",
+                "type": "list",
+                "default": [],
+                "hint": "只填写QQ群号即可，会按上面的平台ID和消息类型自动拼接。定时任务、过题通知、榜单变更和错误提示只会推送到这里配置的QQ群。"
+            }
+        }
+    },
+    "schedule": {
+        "description": "同步定时任务配置",
+        "type": "object",
+        "items": {
+            "user_sync_schedule_enabled": {
+                "description": "启用用户定时同步",
+                "type": "bool",
+                "default": false,
+                "hint": "开启后每 1 小时按“用户同步时间”执行一次同步。"
+            },
+            "user_sync_schedule_time": {
+                "description": "用户同步时间",
+                "type": "string",
+                "default": "01:30",
+                "hint": "格式 MM:SS，默认每小时 01 分 30 秒。"
+            },
+            "ac_sync_schedule_enabled": {
+                "description": "启用AC定时同步",
+                "type": "bool",
+                "default": false,
+                "hint": "开启后每 1 分钟按“AC同步时间”执行一次同步。"
+            },
+            "ac_sync_schedule_time": {
+                "description": "AC同步时间",
+                "type": "string",
+                "default": "45",
+                "hint": "格式 SS，默认每分钟 45 秒。"
+            }
+        }
+    },
+    "daily_ranking": {
+        "description": "每日榜单配置",
+        "type": "object",
+        "items": {
+            "daily_ranking_enabled": {
+                "description": "启用每日榜单定时推送",
+                "type": "bool",
+                "default": true,
+                "hint": "开启后会按“每日榜单发送时间”每天自动查询并推送每日榜单。“每日榜单” 指令不受该开关影响。"
+            },
+            "daily_ranking_send_time": {
+                "description": "每日榜单发送时间",
+                "type": "string",
+                "default": "00:00:00",
+                "hint": "统计结束日（第二天）发送每日榜单的时间，格式 HH:MM 或 HH:MM:SS。建议和“每日榜单统计结束时间”保持相同，这样会在统计区间刚结束时推送；默认第二天 00:00:00 发送。"
+            },
+            "daily_ranking_window_start_time": {
+                "description": "每日榜单统计开始时间",
+                "type": "string",
+                "default": "00:00:00",
+                "hint": "统计区间第一天的开始时间，格式 HH:MM 或 HH:MM:SS。默认第一天 00:00:00。"
+            },
+            "daily_ranking_window_end_time": {
+                "description": "每日榜单统计结束时间",
+                "type": "string",
+                "default": "00:00:00",
+                "hint": "统计区间结束时间，格式 HH:MM 或 HH:MM:SS。默认第二天 00:00:00。"
+            },
+            "daily_ranking_query_timeout_seconds": {
+                "description": "每日榜单查询超时时间",
+                "type": "int",
+                "default": 40,
+                "hint": "默认 40 秒。数据庞大，查询较慢，超过该秒数会停止查询并返回错误。"
+            }
+        }
+    },
+    "notification": {
+        "description": "过题通知配置",
+        "type": "object",
+        "items": {
+            "notify_enabled": {
+                "description": "启用过题通知",
+                "type": "bool",
+                "default": true,
+                "hint": "关闭后仍会同步 AC 数据和排行榜，并更新用户上一次达到阈值时记录的 AC 题数，但不会发送用户过题通知图片。"
+            },
+            "notify_threshold": {
+                "description": "过题通知阈值",
+                "type": "int",
+                "default": 5,
+                "hint": "相对用户上一次达到阈值时记录的 AC 题数，新增通过题数达到该值时触发。"
+            }
+        }
+    }
+}
