@@ -357,7 +357,6 @@ plugin_data/astrbot_plugin_nyoj/nyoj_rank.db
 | `username` | `TEXT`    | 缓存榜中的用户名                                     |
 | `ac_count` | `INTEGER` | 缓存榜中的 AC 题数；用于和新榜单对比生成排行榜升降图 |
 
-生成图片和题面 HTML 会写入插件数据目录，并使用固定文件名覆盖上一次结果。
 
 ## 🚨 注意事项
 
