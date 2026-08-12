@@ -13,7 +13,6 @@
 <p align="center">
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
   <img src="https://img.shields.io/badge/Python-3.10%2B-blue" alt="Python Version">
-  <img src="https://img.shields.io/badge/AstrBot-%E2%89%A54.9.2-green" alt="AstrBot">
   <img src="https://img.shields.io/badge/Platform-aiocqhttp-lightgrey" alt="Platform">
   <a href="https://github.com/GGGeeeooorrrgggeee/astrbot_plugin_nyoj"><img src="https://img.shields.io/github/stars/GGGeeeooorrrgggeee/astrbot_plugin_nyoj" alt="Stars"></a>
   <a href="https://github.com/GGGeeeooorrrgggeee/astrbot_plugin_nyoj/commits/main"><img src="https://img.shields.io/github/last-commit/GGGeeeooorrrgggeee/astrbot_plugin_nyoj" alt="Last Commit"></a>
