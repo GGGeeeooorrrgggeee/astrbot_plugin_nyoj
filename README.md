@@ -38,8 +38,10 @@ NYOJ 是南阳理工学院计科 ACM&&TC 集训队所属的 OJ 名称。本项�
 ## 二、项目信息 ℹ️
 
 - 作者：[George](https://github.com/GGGeeeooorrrgggeee)
-- 版本：1.0
+- 版本：1.0.0
+- 插件名：`astrbot_plugin_nyoj`
 - 仓库：[astrbot_plugin_nyoj](https://github.com/GGGeeeooorrrgggeee/astrbot_plugin_nyoj)
+- 支持平台：`aiocqhttp`
 
 ## 三、核心功能 ✅
 
