@@ -5,9 +5,11 @@
 </p>
 
 
+
 <p align="center" style="margin-top: 8px; font-size: 18px;">
   ✨ <a href="https://github.com/AstrBotDevs/AstrBot" target="_blank">AstrBot</a> NYOJ 排行榜同步、过题通知与榜单推送插件 ✨
 </p>
+
 
 
 <p align="center">
@@ -19,10 +21,12 @@
 </p>
 
 
+
 <p align="center">
   <strong>Language / 语言</strong><br>
   <a href="README.md"><img src="https://img.shields.io/badge/中文-当前-blue" alt="中文"></a>
 </p>
+
 
 
 ---
@@ -253,6 +257,8 @@ nyoj 2026-06-01 20
 | `测试推送`         | 无     | 向配置的群发送测试消息                       |
 | `开启查询非公开赛` | 无     | 开启非公开赛查询                             |
 | `关闭查询非公开赛` | 无     | 关闭非公开赛查询                             |
+| `开启过题通知`     | 无     | 开启过题通知                                 |
+| `关闭过题通知`     | 无     | 关闭过题通知                                 |
 | `更改榜单基础人数` | 数字   | 修改榜单基础人数并刷新缓存                   |
 | `更改榜单最大人数` | 数字   | 修改手动查询榜单最大人数                     |
 | `添加黑名单`       | 用户名 | 添加榜单黑名单并刷新缓存                     |
