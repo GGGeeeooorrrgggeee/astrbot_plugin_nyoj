@@ -149,7 +149,7 @@ class NyojRankPlugin(Star):
             logger.error("%s 开启过题通知失败: %s", self._oj_name(), exc)
             yield event.plain_result(self._safe_error_text(f"{self._oj_name()} 开启过题通知", exc))
             return
-        yield event.plain_result(f"已开启过题通知！{save_note}")
+        yield event.plain_result(f"✅已开启过题通知！{save_note}")
 
     @filter.permission_type(filter.PermissionType.ADMIN)
     @filter.command("关闭过题通知")
@@ -161,7 +161,7 @@ class NyojRankPlugin(Star):
             logger.error("%s 关闭过题通知失败: %s", self._oj_name(), exc)
             yield event.plain_result(self._safe_error_text(f"{self._oj_name()} 关闭过题通知", exc))
             return
-        yield event.plain_result(f"已关闭过题通知！{save_note}")
+        yield event.plain_result(f"❌已关闭过题通知！{save_note}")
 
     @filter.permission_type(filter.PermissionType.ADMIN)
     @filter.command("更改榜单基础人数")
