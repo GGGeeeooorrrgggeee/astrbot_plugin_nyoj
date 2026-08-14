@@ -140,6 +140,30 @@ class NyojRankPlugin(Star):
         yield event.plain_result(f"已关闭查询非公开赛！{save_note}")
 
     @filter.permission_type(filter.PermissionType.ADMIN)
+    @filter.command("开启过题通知")
+    async def enable_ac_notify(self, event: AstrMessageEvent):
+        """开启过题通知"""
+        try:
+            save_note = await self._set_config_value("notification.notify_enabled", True)
+        except Exception as exc:
+            logger.error("%s 开启过题通知失败: %s", self._oj_name(), exc)
+            yield event.plain_result(self._safe_error_text(f"{self._oj_name()} 开启过题通知", exc))
+            return
+        yield event.plain_result(f"已开启过题通知！{save_note}")
+
+    @filter.permission_type(filter.PermissionType.ADMIN)
+    @filter.command("关闭过题通知")
+    async def disable_ac_notify(self, event: AstrMessageEvent):
+        """关闭过题通知"""
+        try:
+            save_note = await self._set_config_value("notification.notify_enabled", False)
+        except Exception as exc:
+            logger.error("%s 关闭过题通知失败: %s", self._oj_name(), exc)
+            yield event.plain_result(self._safe_error_text(f"{self._oj_name()} 关闭过题通知", exc))
+            return
+        yield event.plain_result(f"已关闭过题通知！{save_note}")
+
+    @filter.permission_type(filter.PermissionType.ADMIN)
     @filter.command("更改榜单基础人数")
     async def set_ranking_limit(self, event: AstrMessageEvent):
         """更改榜单基础人数并刷新本地榜单缓存"""
