@@ -33,7 +33,7 @@
 
 ## 一、简介
 
-NYOJ 是南阳理工学院计科 ACM&&TC 集训队所属的 OJ 名称。本项目是一个面向 NYOJ 的 [AstrBot](https://github.com/AstrBotDevs/AstrBot) 插件，支持从 NYOJ 数据库同步用户与 AC 数据，生成总排行榜、比赛榜单、每日榜单、过题通知图片、排行榜升降图，并提供题目查询和用户主页卡片功能。
+`NYOJ` 是南阳理工学院计科 ACM&&TC 集训队所属的 OJ 名称。本项目是一个面向 NYOJ 的 [AstrBot](https://github.com/AstrBotDevs/AstrBot) 插件，支持从 NYOJ 数据库同步用户与 AC 数据，生成总排行榜、比赛榜单、每日榜单、过题通知图片、排行榜升降图，并提供题目查询和用户主页卡片功能。
 
 本项目整合自前几届学长留下的 NoneBot 插件代码。原项目没有完整版本管理记录，因此这里在保留核心思路的基础上，将其适配到 AstrBot，并继续新增了一些功能。
 
