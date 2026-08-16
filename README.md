@@ -16,6 +16,7 @@
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
   <img src="https://img.shields.io/badge/Python-3.10%2B-blue" alt="Python Version">
   <img src="https://img.shields.io/badge/Platform-aiocqhttp-lightgrey" alt="Platform">
+  <img src="https://img.shields.io/badge/Version-1.0.0-orange" alt="Version">
   <a href="https://github.com/GGGeeeooorrrgggeee/astrbot_plugin_nyoj"><img src="https://img.shields.io/github/stars/GGGeeeooorrrgggeee/astrbot_plugin_nyoj" alt="Stars"></a>
   <a href="https://github.com/GGGeeeooorrrgggeee/astrbot_plugin_nyoj/commits/main"><img src="https://img.shields.io/github/last-commit/GGGeeeooorrrgggeee/astrbot_plugin_nyoj" alt="Last Commit"></a>
 </p>
@@ -124,7 +125,7 @@ pycryptodome
 
 ## 六、安装
 
-1. 将插件放入 AstrBot 的插件目录，或通过 AstrBot 插件管理安装。
+1. 通过 AstrBot 插件管理使用 `zip` 压缩包或仓库链接安装。
 2. AstrBot 通常会自动安装 `requirements.txt` 中的依赖；如果依赖安装失败，请根据日志手动安装。
 3. 如果需要使用 `查询题目`，请在服务器中安装 Chromium，并确保插件能够找到 Chromium 可执行文件。
 4. 在 AstrBot WebUI 中填写插件配置。
