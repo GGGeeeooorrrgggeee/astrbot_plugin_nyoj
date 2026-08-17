@@ -38,7 +38,7 @@
 
 本项目整合自前几届学长留下的 NoneBot 插件代码。原项目没有完整版本管理记录，因此这里在保留核心思路的基础上，将其适配到 AstrBot，并继续新增了一些功能。
 
-插件会使用本地 SQLite 缓存同步数据，定时任务、榜单人数、黑名单、推送目标等都可以在 AstrBot 插件配置中管理。
+插件使用本地 SQLite 缓存同步数据，定时任务、榜单人数、黑名单、推送目标等都可以在 AstrBot 插件配置中管理。
 
 ## 二、项目信息
 
@@ -47,6 +47,7 @@
 - 插件名：`astrbot_plugin_nyoj`
 - 仓库：[astrbot_plugin_nyoj](https://github.com/GGGeeeooorrrgggeee/astrbot_plugin_nyoj)
 - 支持平台：`aiocqhttp`
+- 作者QQ（有问题请联系作者）：3467842596
 
 ## 三、核心功能
 
